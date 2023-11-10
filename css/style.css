@@ -1,0 +1,84 @@
+:root {
+   --green: #00f260;
+   --blue: #0575e6;
+ }
+ 
+ body {
+   display: grid;
+   grid-gap: 20px;
+   grid-template-columns: repeat(3, 200px);
+ 
+   font: 18px sans-serif;
+ }
+ 
+ .gradient {
+   position: relative;
+ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 200px;
+   height: 200px;
+ 
+   background: linear-gradient(var(--green), var(--blue));
+ }
+
+
+
+.gradient::before {
+   position: absolute;
+   left: calc(50% - 1px);
+ 
+   display: flex;
+   justify-content: center;
+   width: 2px;
+   height: 70%;
+ 
+   color: #fff;
+ 
+   background: #fff;
+   transform: rotateZ(180deg);
+   opacity: 0.5;
+ 
+   content: "^";
+ }
+ 
+ .gradient:nth-child(2) {
+   background: linear-gradient(0deg, var(--green), var(--blue));
+ }
+ 
+ .gradient:nth-child(2)::before {
+   transform: rotateZ(0deg);
+ }
+ 
+ .gradient:nth-child(3) {
+   background: linear-gradient(45deg, var(--green), var(--blue));
+ }
+ 
+ .gradient:nth-child(3)::before {
+   transform: rotateZ(45deg);
+ }
+ 
+ .gradient:nth-child(4) {
+   background: linear-gradient(-45deg, var(--green), var(--blue));
+ }
+ 
+ .gradient:nth-child(4)::before {
+   transform: rotateZ(-45deg);
+ }
+ 
+ .gradient:nth-child(5) {
+   background: linear-gradient(270deg, var(--green), var(--blue));
+ }
+ 
+ .gradient:nth-child(5)::before {
+   transform: rotateZ(270deg);
+ }
+ 
+ .gradient:nth-child(6) {
+   background: linear-gradient(90deg, var(--green), var(--blue));
+ }
+ 
+ .gradient:nth-child(6)::before {
+   transform: rotateZ(90deg);
+ }
